@@ -489,3 +489,55 @@ input[type=text].lt{background:#fff;color:var(--ink);border:1px solid var(--line
   .logo-chip img{height:34px}
 }
 nav.bc{position:static;background:none!important;box-shadow:none!important;color:inherit;backdrop-filter:none}
+
+/* ===== round 2: white top bar, sticky dark nav, client tweaks ===== */
+.topbar{background:#fff;color:var(--ink);border-bottom:1px solid var(--line);position:relative;z-index:101}
+.tb-in{display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:78px;padding-top:8px;padding-bottom:8px}
+.tb-logo img{height:58px;width:auto;display:block}
+.tb-info{display:flex;align-items:center;gap:30px}
+.tb-item{display:flex;flex-direction:column;line-height:1.2}
+.tb-item small{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.tb-item b{font-size:15px;font-weight:600;color:var(--ink)}
+.tb-call:hover b{color:var(--blue)}
+.tb-ta{display:flex;align-items:center;gap:10px;border:1.5px solid #34E0A1;border-radius:12px;padding:8px 14px;background:#F2FFF9;transition:transform .25s,box-shadow .25s}
+.tb-ta:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(0,170,108,.18)}
+.tb-ta-stars{color:#00AA6C;font-size:11px;letter-spacing:1px}
+.tb-ta small{display:block;font-size:10px;color:#3b5;color:#2F6B55;letter-spacing:.04em}
+.tb-ta b{display:block;font-size:15px;color:#00392A;font-weight:700;line-height:1.1}
+.tb-ta em{font-style:normal;font-size:12.5px;font-weight:600;color:#00AA6C;margin-left:4px}
+#nav{position:sticky;top:0;background:var(--deep);color:var(--sand);box-shadow:0 1px 0 rgba(255,255,255,.06)}
+#nav.solid{background:var(--deep);color:var(--sand);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+#nav .nav-in{height:60px}
+.hero{height:calc(100svh - 140px);min-height:620px;max-height:900px}
+.phero{padding:70px 0 80px}
+.mmenu{padding-top:150px}
+/* green WhatsApp everywhere */
+.mbar a.w{background:#25D366;color:#fff}
+.wa,a.wa{background:#25D366!important;color:#fff!important}
+/* highlighted prices under departures */
+.board-foot.price-tags{display:flex;flex-wrap:wrap;gap:12px;padding:20px 30px;background:rgba(242,195,53,.08);border-top:1px solid rgba(242,195,53,.25)}
+.price-tags .pt{display:flex;align-items:baseline;gap:10px;background:var(--tower);color:var(--ink);border-radius:999px;padding:10px 18px;box-shadow:0 6px 18px rgba(242,195,53,.25)}
+.price-tags .pt small{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;font-weight:500}
+.price-tags .pt b{font-family:var(--serif);font-weight:400;font-size:24px;line-height:1}
+.price-tags .pt.free{background:var(--sand)}
+@media (max-width:980px){
+  .tb-addr{display:none}
+  .nav-in .btn{display:inline-flex;padding:9px 16px;font-size:13px}
+}
+@media (max-width:680px){
+  .tb-in{min-height:64px;gap:10px}
+  .tb-logo img{height:44px}
+  .tb-info{gap:8px}
+  .tb-call small{display:none}
+  .tb-call b{font-size:0}
+  .tb-call b::before{content:"☎";font-size:20px;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:var(--paper);border:1px solid var(--line)}
+  .tb-ta{padding:6px 10px;gap:6px}
+  .tb-ta em,.tb-ta small,.tb-ta-stars{display:none}
+  .tb-ta b{font-size:13px}
+  .hero{height:auto;min-height:calc(100svh - 124px)}
+  .hero-in{padding-top:40px}
+  .phero{padding:44px 0 56px}
+  .board-foot.price-tags{padding:16px}
+  .price-tags .pt{padding:8px 14px}
+  .price-tags .pt b{font-size:20px}
+}

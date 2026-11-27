@@ -190,3 +190,12 @@ const firstQa=$('.qa');if(firstQa){firstQa.classList.add('open');firstQa.querySe
   lb.addEventListener('click',e=>{if(e.target===lb)close()});
   addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(i-1);if(e.key==='ArrowRight')show(i+1)});
 })();
+
+/* autoplay muted videos only while visible (saves data) */
+(function(){
+  const vs=[...document.querySelectorAll('video[data-auto]')]; if(!vs.length)return;
+  const still=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;
+    if(e.isIntersecting&&!still){v.muted=true;const p=v.play();if(p&&p.catch)p.catch(()=>{})}else{v.pause()}}),{threshold:.35});
+  vs.forEach(v=>vo.observe(v));
+})();
